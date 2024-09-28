@@ -4,9 +4,9 @@ class CenterView extends StatelessWidget {
   const CenterView({
     super.key,
     required this.child,
-    this.topPadding = 50,
+    this.topPadding = 85,
     this.bottomPadding = 40,
-    this.xPadding = 25,
+    this.xPadding = 15,
   });
 
   final Widget child;

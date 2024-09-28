@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack_yeah_app_frontend/styles/text_styles.dart';
 import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/widget_card.dart';
 import 'package:hack_yeah_app_frontend/widgets/buttons/my_icon_column_button.dart';
 
@@ -10,21 +11,19 @@ class BalanceWidget extends StatelessWidget {
     return WidgetCard(
         child: Column(
       children: [
-        const Text(
-          'Saldo',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            'Saldo',
+            style: TextStyles.titleTextStyle(context),
           ),
         ),
         const SizedBox(height: 10),
-        const Text(
+        Text(
           '1000 PLN',
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyles.bigTitleTextStyle(context),
         ),
+        const SizedBox(height: 10),
         Row(
           children: [
             Expanded(
@@ -46,7 +45,7 @@ class BalanceWidget extends StatelessWidget {
             Expanded(
               child: MyIconColumnButton(
                 onPressed: () {},
-                buttonText: 'Tranzakcje',
+                buttonText: 'Historia',
                 icon: const Icon(Icons.list),
               ),
             ),

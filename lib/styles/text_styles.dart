@@ -31,6 +31,15 @@ class TextStyles {
     );
   }
 
+  static TextStyle bigTitleTextStyle(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return GoogleFonts.karla(
+      fontSize: 28,
+      fontWeight: FontWeight.w800,
+      color: themeNotifier.currentTheme['secondaryTextColor'],
+    );
+  }
+
   static TextStyle descriptionTextStyle(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     return GoogleFonts.karla(

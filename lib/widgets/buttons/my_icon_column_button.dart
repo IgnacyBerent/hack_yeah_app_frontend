@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 
 import 'package:hack_yeah_app_frontend/styles/text_styles.dart';
 
@@ -36,7 +35,7 @@ class MyIconColumnButton extends StatelessWidget {
         ),
         Text(
           buttonText,
-          style: TextStyles.buttonTextStyle(context),
+          style: TextStyles.descriptionTextStyle(context),
         ),
       ],
     );

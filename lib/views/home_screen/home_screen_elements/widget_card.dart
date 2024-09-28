@@ -20,7 +20,7 @@ class WidgetCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: child,
         ),
       ),

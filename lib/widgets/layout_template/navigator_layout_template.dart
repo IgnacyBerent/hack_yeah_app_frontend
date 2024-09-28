@@ -19,7 +19,7 @@ class NavigatorLayoutTemplate extends StatefulWidget {
 class _NavigatorLayoutTemplateState extends State<NavigatorLayoutTemplate> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Color(0xFF2F4858),
       extendBodyBehindAppBar: true,
       appBar: NavigatorAppbar(),

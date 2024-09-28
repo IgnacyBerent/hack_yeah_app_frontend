@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack_yeah_app_frontend/styles/theme_notifier.dart';
+import 'package:hack_yeah_app_frontend/views/benefits_screen/benefits_screen.dart';
 import 'package:hack_yeah_app_frontend/views/profile_screen/profile_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -42,8 +43,8 @@ class NavigatorAppbar extends StatelessWidget implements PreferredSizeWidget {
         ),
         IconButton(
           onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const ProfileScreen()));
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const BenefitsScreen()));
           },
           icon: const Icon(Icons.shopping_cart),
           iconSize: iconsSize,
