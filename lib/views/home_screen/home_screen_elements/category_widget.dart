@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:hack_yeah_app_frontend/styles/text_styles.dart';
 
 class CategoryWidget extends StatelessWidget {
-  const CategoryWidget({required this.text, super.key});
+  const CategoryWidget({
+    required this.text,
+    required this.textStyle,
+    super.key,
+  });
 
   final String text;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,8 @@ class CategoryWidget extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyles.imageDescriptionTextStyle(context),
+        style: textStyle,
+        textAlign: TextAlign.center,
       ),
     );
   }
