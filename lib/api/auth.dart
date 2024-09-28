@@ -29,16 +29,23 @@ class Authenticate {
     }
   }
 
-  Future<void> register(
-      String firstName, String lastName, String email, String password) async {
+  Future<void> register({
+    required String firstName,
+    required String lastName,
+    required String pesel,
+    required String gmina,
+    required String email,
+    required String password,
+  }) async {
     final response = await http.post(
       Uri.parse('$baseUrl/users'),
       headers: <String, String>{
         'Content-Type': 'application/json',
       },
       body: json.encode({
-        'first_name': firstName,
-        'last_name': lastName,
+        'display_name': firstName + lastName,
+        'pesel': pesel,
+        'gmina': gmina,
         'email': email,
         'password': password,
       }),

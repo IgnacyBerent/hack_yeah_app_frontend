@@ -61,3 +61,16 @@ String? isPositiveNumberValidator(String? value) {
   }
   return null;
 }
+
+String? isPeselValidator(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Please enter a PESEL number';
+  }
+  if (value.length != 11) {
+    return 'PESEL number must be 11 digits long';
+  }
+  if (int.tryParse(value) == null) {
+    return 'PESEL number must contain only digits';
+  }
+  return null;
+}

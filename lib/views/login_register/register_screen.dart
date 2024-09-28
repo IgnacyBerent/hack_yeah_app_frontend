@@ -27,6 +27,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   var _enteredLName = '';
   var _enteredEmail = '';
   var _enteredPassword = '';
+  var _enteredPesel = '';
+  var _enteredGmina = '';
   String? errorMessage = '';
 
   bool _obscureText = true;
@@ -42,10 +44,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
       try {
         await auth.register(
-          _enteredFName,
-          _enteredLName,
-          _enteredEmail,
-          _enteredPassword,
+          firstName: _enteredFName,
+          lastName: _enteredLName,
+          email: _enteredEmail,
+          password: _enteredPassword,
+          pesel: _enteredPesel,
+          gmina: _enteredGmina,
         );
         if (!context.mounted) {
           return;
@@ -116,6 +120,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   icon: Icons.person,
                   validator: (value) => isEmptyValidator(value),
                   onSaved: (value) => _enteredLName = value!,
+                ),
+                fromSeparator,
+                TextFormContainer(
+                  text: 'PESEL',
+                  icon: Icons.person,
+                  keyboardType: TextInputType.number,
+                  validator: (value) => isPeselValidator(value),
+                  onSaved: (value) => _enteredPesel = value!,
+                ),
+                fromSeparator,
+                TextFormContainer(
+                  text: 'GMINA',
+                  icon: Icons.location_city,
+                  validator: (value) => isEmptyValidator(value),
+                  onSaved: (value) => _enteredGmina = value!,
                 ),
                 fromSeparator,
                 TextFormContainer(

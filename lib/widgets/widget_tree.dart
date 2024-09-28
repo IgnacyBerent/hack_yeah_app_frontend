@@ -71,7 +71,7 @@ class _WidgetTreeState extends State<WidgetTree> {
 
   @override
   Widget build(BuildContext context) {
-    return const NavigatorLayoutTemplate(); // Currently active screen
+    return const LoginScreen(); // Currently active screen
     // delete above line to enable jwt login
     return StreamBuilder<bool>(
       stream: tokenController.stream,
