@@ -1,8 +1,6 @@
 import 'package:hack_yeah_app_frontend/api/auth.dart';
 import 'package:hack_yeah_app_frontend/api/jwt.dart';
-import 'package:hack_yeah_app_frontend/views/home_screen/home_screen.dart';
 import 'package:hack_yeah_app_frontend/views/login_register/login_screen.dart';
-import 'package:hack_yeah_app_frontend/views/login_register/register_screen.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/navigator_layout_template.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +38,6 @@ class _WidgetTreeState extends State<WidgetTree> {
   @override
   void initState() {
     super.initState();
-    /*
     timer = Timer.periodic(const Duration(seconds: 3), (timer) async {
       bool isTokenExpired = await JwtToken().isTokenExpired();
       if (isTokenExpired) {
@@ -58,7 +55,6 @@ class _WidgetTreeState extends State<WidgetTree> {
         }
       }
     });
-    */
   }
 
   @override
@@ -71,8 +67,6 @@ class _WidgetTreeState extends State<WidgetTree> {
 
   @override
   Widget build(BuildContext context) {
-    return const LoginScreen(); // Currently active screen
-    // delete above line to enable jwt login
     return StreamBuilder<bool>(
       stream: tokenController.stream,
       builder: (context, snapshot) {

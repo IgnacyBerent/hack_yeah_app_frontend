@@ -6,13 +6,14 @@ import 'package:hack_yeah_app_frontend/api/debug_logs.dart';
 import 'package:hack_yeah_app_frontend/api/jwt.dart';
 
 class Authenticate {
-  final String baseUrl = '';
+  final String baseUrl = 'https://cityboost-auth.onrender.com';
   final JwtToken jwt = JwtToken();
 
   Future<void> login(String email, String password) async {
     final response = await http.post(
       Uri.parse('$baseUrl/login'),
-      body: {'email': email, 'password': password},
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'email': email, 'password': password}),
     );
 
     if (response.statusCode == 200) {
@@ -38,14 +39,14 @@ class Authenticate {
     required String password,
   }) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/users'),
+      Uri.parse('$baseUrl/register'),
       headers: <String, String>{
         'Content-Type': 'application/json',
       },
       body: json.encode({
-        'display_name': firstName + lastName,
+        'full_name': firstName + lastName,
         'pesel': pesel,
-        'gmina': gmina,
+        'district': gmina,
         'email': email,
         'password': password,
       }),
@@ -72,7 +73,11 @@ class Authenticate {
     String? rt = await jwt.getRefreshToken();
 
     final response = await http.post(
-      Uri.parse('$baseUrl/refresh_token?refresh_token=$rt'),
+      Uri.parse('$baseUrl/refresh'),
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode({'refresh_token': rt}),
     );
 
     if (response.statusCode == 200) {
