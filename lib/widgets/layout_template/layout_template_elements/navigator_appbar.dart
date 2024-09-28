@@ -13,16 +13,20 @@ class NavigatorAppbar extends StatelessWidget implements PreferredSizeWidget {
 
     const iconsSize = 30.0;
     return AppBar(
-      backgroundColor: const Color.fromARGB(255, 224, 242, 253),
-      iconTheme: const IconThemeData(
+      backgroundColor: themeNotifier.currentTheme['mainColor']!,
+      iconTheme: IconThemeData(
         size: iconsSize,
+        color: themeNotifier.currentTheme['mainTextColor']!,
       ),
       actions: [
         PopupMenuButton<String>(
           onSelected: (String value) {
             themeNotifier.changeTheme(value);
           },
-          icon: const Icon(Icons.color_lens),
+          icon: Icon(
+            Icons.color_lens,
+            color: themeNotifier.currentTheme['mainTextColor']!,
+          ),
           iconSize: iconsSize,
           itemBuilder: (BuildContext context) {
             return [
@@ -48,6 +52,7 @@ class NavigatorAppbar extends StatelessWidget implements PreferredSizeWidget {
           },
           icon: const Icon(Icons.shopping_cart),
           iconSize: iconsSize,
+          color: themeNotifier.currentTheme['mainTextColor']!,
         ),
         IconButton(
           onPressed: () {
@@ -56,6 +61,7 @@ class NavigatorAppbar extends StatelessWidget implements PreferredSizeWidget {
           },
           icon: const Icon(Icons.person),
           iconSize: iconsSize,
+          color: themeNotifier.currentTheme['mainTextColor']!,
         ),
       ],
     );

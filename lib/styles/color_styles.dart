@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
 const darkTheme = {
-  'mainColor': Color.fromARGB(255, 230, 00, 126),
-  'mainBackgroundColor': Color.fromARGB(255, 27, 19, 45),
-  'mainTextColor': Color.fromARGB(255, 15, 11, 240),
-  'secondaryTextColor': Color.fromARGB(255, 4, 4, 59),
+  'themeColor': Color.fromARGB(255, 0, 0, 0),
+  'mainColor': Color.fromARGB(255, 8, 8, 8),
+  'secondaryColor': Color.fromARGB(255, 230, 00, 126),
+  'mainTextColor': Color(0xFFF8F8F8),
+  'secondaryTextColor': Color.fromARGB(255, 117, 117, 117),
+  'thirdaryTextColor': Color.fromARGB(255, 8, 8, 8),
 };
 
 const lightTheme = {
-  'mainColor': Color.fromARGB(255, 0, 150, 136),
-  'mainBackgroundColor': Color.fromARGB(255, 255, 255, 255),
-  'mainTextColor': Color.fromARGB(255, 0, 0, 0),
+  'themeColor': Color.fromARGB(255, 255, 255, 255),
+  'mainColor': Color(0xFFF8F8F8),
+  'secondaryColor': Color(0xFF227FF9),
+  'mainTextColor': Color.fromARGB(255, 8, 8, 8),
   'secondaryTextColor': Color.fromARGB(255, 117, 117, 117),
+  'thirdaryTextColor': Color.fromARGB(255, 8, 8, 8),
 };
 
 const contrastTheme = {

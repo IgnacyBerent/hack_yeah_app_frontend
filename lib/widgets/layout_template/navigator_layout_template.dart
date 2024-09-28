@@ -1,7 +1,6 @@
 import 'package:hack_yeah_app_frontend/views/home_screen/home_screen.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/app_drawer.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/background_container.dart';
-import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/blur_cover.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/center_view.dart';
 import 'package:flutter/material.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/navigator_appbar.dart';
@@ -27,7 +26,6 @@ class _NavigatorLayoutTemplateState extends State<NavigatorLayoutTemplate> {
       body: Stack(
         children: [
           BackgroundContainer(),
-          BlurCover(),
           CenterView(
             child: HomeScreen(),
           ),

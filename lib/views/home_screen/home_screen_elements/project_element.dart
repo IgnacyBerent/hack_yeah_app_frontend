@@ -39,12 +39,12 @@ class ProjectElement extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               '${project.title} #${project.id}',
-              style: TextStyles.titleTextStyle(context),
+              style: TextStyles.widgetTitleTextStyle(context),
             ),
             const SizedBox(height: 5),
             Text(
               project.abstract,
-              style: TextStyles.descriptionTextStyle(context),
+              style: TextStyles.secondaryDescriptionTextStyle(context),
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
             ),
@@ -57,13 +57,13 @@ class ProjectElement extends StatelessWidget {
                 ),
                 Text(
                   project.votes.toString(),
-                  style: TextStyles.descriptionTextStyle(context),
+                  style: TextStyles.numberTextStyle(context),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
                   child: CategoryWidget(
                     text: project.category,
-                    textStyle: TextStyles.imageDescriptionTextStyle(context),
+                    textStyle: TextStyles.numberTextStyle(context),
                   ),
                 ),
               ],

@@ -27,7 +27,16 @@ class TextStyles {
     return GoogleFonts.karla(
       fontSize: 20,
       fontWeight: FontWeight.w800,
-      color: themeNotifier.currentTheme['secondaryTextColor'],
+      color: themeNotifier.currentTheme['mainTextColor'],
+    );
+  }
+
+  static TextStyle widgetTitleTextStyle(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return GoogleFonts.karla(
+      fontSize: 20,
+      fontWeight: FontWeight.w800,
+      color: themeNotifier.currentTheme['thirdaryTextColor'],
     );
   }
 
@@ -36,11 +45,20 @@ class TextStyles {
     return GoogleFonts.karla(
       fontSize: 28,
       fontWeight: FontWeight.w800,
-      color: themeNotifier.currentTheme['secondaryTextColor'],
+      color: themeNotifier.currentTheme['mainTextColor'],
     );
   }
 
   static TextStyle descriptionTextStyle(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return GoogleFonts.karla(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: themeNotifier.currentTheme['mainTextColor'],
+    );
+  }
+
+  static TextStyle secondaryDescriptionTextStyle(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     return GoogleFonts.karla(
       fontSize: 16,
@@ -55,6 +73,15 @@ class TextStyles {
       fontSize: 14,
       fontWeight: FontWeight.w600,
       color: themeNotifier.currentTheme['secondaryTextColor'],
+    );
+  }
+
+  static TextStyle numberTextStyle(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return GoogleFonts.karla(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: themeNotifier.currentTheme['thirdaryTextColor'],
     );
   }
 }

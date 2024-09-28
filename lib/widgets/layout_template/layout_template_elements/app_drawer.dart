@@ -1,33 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:hack_yeah_app_frontend/styles/text_styles.dart';
+import 'package:hack_yeah_app_frontend/styles/theme_notifier.dart';
+import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/app_drawer_tile.dart';
+import 'package:provider/provider.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: const <Widget>[
+        children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: themeNotifier.currentTheme['secondaryColor'],
             ),
             child: Text(
               'Menu',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-              ),
+              style: TextStyles.bigTitleTextStyle(context),
             ),
           ),
-          ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Home'),
+          AppDrawerTile(
+            icon: Icons.home,
+            title: 'Home',
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
+          AppDrawerTile(
+            icon: Icons.event_note_sharp,
+            title: 'Projects',
+            onTap: () {},
+          ),
+          AppDrawerTile(
+            icon: Icons.wallet_giftcard,
+            title: 'Benefits',
+            onTap: () {},
+          ),
+          AppDrawerTile(
+            icon: Icons.wallet,
+            title: 'Wallet',
+            onTap: () {},
           ),
         ],
       ),

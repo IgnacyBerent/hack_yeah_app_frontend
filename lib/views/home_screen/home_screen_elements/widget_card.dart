@@ -14,7 +14,7 @@ class WidgetCard extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Card(
-        color: themeNotifier.currentTheme['mainTextColor'],
+        color: themeNotifier.currentTheme['secondaryColor'],
         elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),

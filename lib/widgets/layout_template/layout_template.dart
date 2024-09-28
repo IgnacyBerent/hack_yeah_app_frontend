@@ -38,7 +38,6 @@ class LayoutTemplate extends StatelessWidget {
       body: Stack(
         children: [
           const BackgroundContainer(),
-          const BlurCover(),
           CenterView(
             topPadding: 100,
             bottomPadding: 20,
