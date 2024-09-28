@@ -1,38 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'theme_notifier.dart';
 
-final appBarTextStyle = GoogleFonts.lato(
-  fontSize: 22,
-  fontWeight: FontWeight.w900,
-  color: const Color.fromARGB(255, 15, 11, 240),
-);
+class TextStyles {
+  static TextStyle appBarTextStyle(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return GoogleFonts.lato(
+      fontSize: 22,
+      fontWeight: FontWeight.w900,
+      color: themeNotifier.currentTheme['mainTextColor'],
+    );
+  }
 
-final buttonTextStyle = GoogleFonts.karla(
-  fontSize: 18,
-  fontWeight: FontWeight.w800,
-  color: const Color.fromARGB(255, 15, 11, 240),
-);
+  static TextStyle buttonTextStyle(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return GoogleFonts.karla(
+      fontSize: 18,
+      fontWeight: FontWeight.w800,
+      color: themeNotifier.currentTheme['mainTextColor'],
+    );
+  }
 
-final titleTextStyle = GoogleFonts.karla(
-  fontSize: 20,
-  fontWeight: FontWeight.w800,
-  color: const Color.fromARGB(255, 4, 4, 59),
-);
+  static TextStyle titleTextStyle(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return GoogleFonts.karla(
+      fontSize: 20,
+      fontWeight: FontWeight.w800,
+      color: themeNotifier.currentTheme['secondaryTextColor'],
+    );
+  }
 
-final descriptionTextStyle = GoogleFonts.karla(
-  fontSize: 16,
-  fontWeight: FontWeight.w600,
-  color: const Color.fromARGB(255, 4, 4, 59),
-);
+  static TextStyle descriptionTextStyle(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return GoogleFonts.karla(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: themeNotifier.currentTheme['secondaryTextColor'],
+    );
+  }
 
-final imageDescriptionTextStyle = GoogleFonts.karla(
-  fontSize: 14,
-  fontWeight: FontWeight.w600,
-  color: const Color.fromARGB(255, 4, 4, 59),
-);
-
-final numberIndexTextStyle = GoogleFonts.roboto(
-  fontSize: 20,
-  fontWeight: FontWeight.bold,
-  color: const Color(0xfff8f8f8),
-);
+  static TextStyle imageDescriptionTextStyle(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return GoogleFonts.karla(
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
+      color: themeNotifier.currentTheme['secondaryTextColor'],
+    );
+  }
+}

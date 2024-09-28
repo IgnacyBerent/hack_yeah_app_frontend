@@ -24,7 +24,7 @@ class MyTextButton extends StatelessWidget {
             ? const CircularProgressIndicator()
             : Text(
                 buttonText,
-                style: buttonTextStyle,
+                style: TextStyles.buttonTextStyle(context),
               ),
       ),
     );

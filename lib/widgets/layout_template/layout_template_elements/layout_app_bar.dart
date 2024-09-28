@@ -15,7 +15,7 @@ class LayoutAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       title: Text(
         title,
-        style: appBarTextStyle,
+        style: TextStyles.appBarTextStyle(context),
       ),
       centerTitle: true,
     );

@@ -37,7 +37,7 @@ class MyIconButton extends StatelessWidget {
                   const SizedBox(width: 10),
                   Text(
                     buttonText,
-                    style: buttonTextStyle,
+                    style: TextStyles.buttonTextStyle(context),
                   ),
                   const SizedBox(width: 10),
                   placement == 'right' ? icon : const SizedBox(),
