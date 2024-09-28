@@ -1,4 +1,5 @@
 import 'package:hack_yeah_app_frontend/api/auth.dart';
+import 'package:hack_yeah_app_frontend/styles/theme_notifier.dart';
 import 'package:hack_yeah_app_frontend/widgets/forms/text_form_container.dart';
 import 'package:hack_yeah_app_frontend/widgets/forms/form_elements/form_validators.dart';
 import 'package:hack_yeah_app_frontend/widgets/forms/form_elements/form_view_container.dart';
@@ -7,6 +8,7 @@ import 'package:hack_yeah_app_frontend/widgets/buttons/my_icon_button.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/form_layout_template.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -90,6 +92,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+
     return FormLayoutTemplate(
       child: FormViewContainer(
         child: Form(
@@ -100,7 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Text(
                   'REJESTRACJA',
                   style: GoogleFonts.lato(
-                    color: const Color.fromARGB(255, 14, 0, 203),
+                    color: themeNotifier.currentTheme['secondaryColor'],
                     fontSize: 30,
                     fontWeight: FontWeight.w900,
                   ),
@@ -179,7 +183,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 fromSeparator,
                 MyIconButton(
                   buttonText: 'ZAREJESTRUJ',
-                  icon: const Icon(Icons.arrow_forward),
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: themeNotifier.currentTheme['thirdaryTextColor'],
+                  ),
                   placement: 'right',
                   onPressed: _signUp,
                   isLoading: _isLoading,

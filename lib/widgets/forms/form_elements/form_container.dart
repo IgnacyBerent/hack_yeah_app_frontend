@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hack_yeah_app_frontend/styles/theme_notifier.dart';
 import 'package:hack_yeah_app_frontend/widgets/forms/form_elements/form_decoration.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class FormContainer extends StatelessWidget {
   final void Function(String?)? onSaved;
@@ -29,6 +31,8 @@ class FormContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+
     final TextEditingController effectiveController =
         controller ?? TextEditingController();
     final FocusNode? focusNode =
@@ -81,12 +85,12 @@ class FormContainer extends StatelessWidget {
                 bottom: 0,
                 child: Container(
                   height: 3.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 204, 231, 248),
-                        Color.fromARGB(255, 14, 0, 203),
-                        Color.fromARGB(255, 204, 231, 248),
+                        const Color.fromARGB(255, 204, 231, 248),
+                        themeNotifier.currentTheme['secondaryColor']!,
+                        const Color.fromARGB(255, 204, 231, 248),
                       ],
                     ),
                   ),

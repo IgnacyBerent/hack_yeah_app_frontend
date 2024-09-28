@@ -1,5 +1,4 @@
 import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/background_container.dart';
-import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/blur_cover.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/center_view.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template_elements/layout_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,6 @@ class FormLayoutTemplate extends StatelessWidget {
       body: Stack(
         children: [
           const BackgroundContainer(),
-          const BlurCover(),
           CenterView(
             topPadding: 0,
             bottomPadding: 20,

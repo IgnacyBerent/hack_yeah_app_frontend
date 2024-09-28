@@ -18,7 +18,7 @@ class TextStyles {
     return GoogleFonts.karla(
       fontSize: 18,
       fontWeight: FontWeight.w800,
-      color: themeNotifier.currentTheme['mainTextColor'],
+      color: themeNotifier.currentTheme['thirdaryTextColor'],
     );
   }
 

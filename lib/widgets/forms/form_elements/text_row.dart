@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hack_yeah_app_frontend/styles/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class TextRow extends StatelessWidget {
   const TextRow({
@@ -15,6 +17,8 @@ class TextRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -30,10 +34,10 @@ class TextRow extends StatelessWidget {
         TextButton(
           onPressed: onPressed,
           child: Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
-                  color: Color.fromARGB(255, 14, 0, 203),
+                  color: themeNotifier.currentTheme['secondaryColor']!,
                   width: 1.5,
                 ),
               ),
@@ -41,7 +45,7 @@ class TextRow extends StatelessWidget {
             child: Text(
               clicText,
               style: GoogleFonts.karla(
-                color: const Color.fromARGB(255, 14, 0, 203),
+                color: themeNotifier.currentTheme['secondaryColor'],
                 fontSize: 12,
                 fontWeight: FontWeight.w900,
               ),
