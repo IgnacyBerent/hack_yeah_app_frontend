@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hack_yeah_app_frontend/providers/money_notifier.dart';
 import 'package:provider/provider.dart';
 
 import 'package:hack_yeah_app_frontend/styles/theme_notifier.dart';
@@ -7,8 +8,11 @@ import 'package:hack_yeah_app_frontend/widgets/widget_tree.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => ThemeNotifier(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeNotifier()),
+        ChangeNotifierProvider(create: (_) => MoneyNotifier()),
+      ],
       child: const MyApp(),
     ),
   );

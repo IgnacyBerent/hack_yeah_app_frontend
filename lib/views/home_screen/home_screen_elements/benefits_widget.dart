@@ -44,7 +44,7 @@ class BenefitsWidget extends StatelessWidget {
             child: TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => BenefitsScreen(),
+                  builder: (context) => const BenefitsScreen(),
                 ));
               },
               child: Text(

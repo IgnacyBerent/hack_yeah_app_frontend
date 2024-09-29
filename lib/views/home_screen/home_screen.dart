@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Project> projects = [];
   List<Benefit> benefits = [];
-  int balance = 0;
 
   Future<void> getBenefits() async {
     log('Getting benefits (home screen)');
@@ -47,19 +46,11 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  getWallet() async {
-    final value = await db.getUserWallet();
-    setState(() {
-      balance = value.money;
-    });
-  }
-
   @override
   void initState() {
     log('initState');
     getBenefits();
     getProjects();
-    getWallet();
     super.initState();
   }
 
@@ -68,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          BalanceWidget(balance: balance),
+          const BalanceWidget(),
           ProjectsWidget(projects: projects),
           BenefitsWidget(benefits: benefits),
         ],

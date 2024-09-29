@@ -39,15 +39,6 @@ class BenefitScreen extends StatelessWidget {
                 text: benefit.category,
                 textStyle: TextStyles.descriptionTextStyle(context)),
             const SizedBox(height: 30),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Comments',
-                style: TextStyles.titleTextStyle(context),
-              ),
-            ),
-            const SizedBox(height: 10),
-            Container(),
           ],
         ),
       ),

@@ -69,4 +69,18 @@ class DatabaseApi {
       throw Exception('Failed to load wallet');
     }
   }
+
+  Future<void> addFunds(int amount) async {
+    Authenticate auth = Authenticate();
+    final user = await auth.getMe();
+    final uId = user.id;
+    final response = await http.post(
+      Uri.parse('$urlDamian/wallet/$uId/add_money/$amount'),
+      headers: {'Content-Type': 'application/json'},
+    );
+    if (response.statusCode != 200) {
+      debugLogs(response.statusCode, 202);
+      throw Exception('Failed to add funds');
+    }
+  }
 }

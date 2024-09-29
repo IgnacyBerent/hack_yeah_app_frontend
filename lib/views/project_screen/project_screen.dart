@@ -64,15 +64,6 @@ class ProjectScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 30),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Comments',
-                style: TextStyles.titleTextStyle(context),
-              ),
-            ),
-            const SizedBox(height: 10),
-            Container(),
           ],
         ),
       ),
