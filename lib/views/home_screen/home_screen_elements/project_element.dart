@@ -38,8 +38,10 @@ class ProjectElement extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              '${project.title} #${project.id}',
+              '${project.title} #${project.projectId}',
               style: TextStyles.widgetTitleTextStyle(context),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 5),
             Text(

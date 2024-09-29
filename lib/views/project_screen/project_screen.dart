@@ -3,8 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hack_yeah_app_frontend/models/project.dart';
 import 'package:hack_yeah_app_frontend/styles/text_styles.dart';
+import 'package:hack_yeah_app_frontend/styles/theme_notifier.dart';
 import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/category_widget.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template.dart';
+import 'package:provider/provider.dart';
 
 class ProjectScreen extends StatelessWidget {
   const ProjectScreen({required this.project, super.key});
@@ -13,6 +15,8 @@ class ProjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+
     return LayoutTemplate(
       screenName: '',
       child: SingleChildScrollView(
@@ -28,7 +32,7 @@ class ProjectScreen extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Text(
-              '${project.title} #${project.id}',
+              '${project.title} #${project.projectId}',
               style: TextStyles.bigTitleTextStyle(context),
             ),
             const SizedBox(height: 10),
@@ -41,7 +45,11 @@ class ProjectScreen extends StatelessWidget {
               children: [
                 Transform.rotate(
                   angle: pi / 2, // Rotate by 90 degrees
-                  child: const Icon(Icons.compare_arrows, size: 40),
+                  child: Icon(
+                    Icons.compare_arrows,
+                    size: 40,
+                    color: themeNotifier.currentTheme['mainTextColor'],
+                  ),
                 ),
                 Text(
                   project.votes.toString(),

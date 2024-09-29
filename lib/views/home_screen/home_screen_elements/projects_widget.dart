@@ -42,7 +42,7 @@ class ProjectsWidget extends StatelessWidget {
             child: TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ProjectsScreen(projects: projects),
+                  builder: (context) => const ProjectsScreen(),
                 ));
               },
               child: Text(

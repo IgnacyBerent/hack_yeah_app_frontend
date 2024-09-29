@@ -4,7 +4,9 @@ import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/wi
 import 'package:hack_yeah_app_frontend/widgets/buttons/my_icon_column_button.dart';
 
 class BalanceWidget extends StatelessWidget {
-  const BalanceWidget({super.key});
+  const BalanceWidget({required this.balance, super.key});
+
+  final int balance;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class BalanceWidget extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Text(
-          '1000 PLN',
+          '$balance PLN',
           style: TextStyles.bigTitleTextStyle(context),
         ),
         const SizedBox(height: 10),

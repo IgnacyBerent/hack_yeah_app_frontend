@@ -1,4 +1,5 @@
 class Project {
+  String id;
   String title;
   String photo;
   String category;
@@ -8,15 +9,18 @@ class Project {
   String coordinates;
   bool isVerified;
   String statusOfProject;
-  DateTime dateAdded;
-  DateTime dateEnded;
+  String dateAdded;
+  String dateEnded;
   int cost;
+  String userName;
+  String userId;
   int gatheredMoney;
   int fundedMoney;
-  int id;
+  int projectId;
   int votes;
 
   Project({
+    required this.id,
     required this.title,
     required this.photo,
     required this.category,
@@ -29,14 +33,17 @@ class Project {
     required this.dateAdded,
     required this.dateEnded,
     required this.cost,
+    required this.userName,
+    required this.userId,
     required this.gatheredMoney,
     required this.fundedMoney,
-    required this.id,
-    required this.votes,
+    required this.projectId,
+    this.votes = 0,
   });
 
   factory Project.fromJson(Map<String, dynamic> json) {
     return Project(
+      id: json['_id'],
       title: json['title'],
       photo: json['photo'],
       category: json['category'],
@@ -46,13 +53,15 @@ class Project {
       coordinates: json['coordinates'],
       isVerified: json['is_verified'],
       statusOfProject: json['status_of_project'],
-      dateAdded: DateTime.parse(json['date_added']),
-      dateEnded: DateTime.parse(json['date_ended']),
+      dateAdded: json['date_added'],
+      dateEnded: json['date_ended'],
       cost: json['cost'],
+      userName: json['user_name'],
+      userId: json['user_id'],
       gatheredMoney: json['gathered_money'],
       fundedMoney: json['funded_money'],
-      id: json['ID'],
-      votes: json['votes'],
+      projectId: json['ID'],
+      votes: 0,
     );
   }
 }

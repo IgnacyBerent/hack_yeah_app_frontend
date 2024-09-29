@@ -37,7 +37,7 @@ class BenefitElement extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              '${benefit.name} #${benefit.price}',
+              '${benefit.name} \$${benefit.price}',
               style: TextStyles.widgetTitleTextStyle(context),
             ),
             const SizedBox(height: 5),
