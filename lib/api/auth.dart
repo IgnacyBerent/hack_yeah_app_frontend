@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:developer';
 
+import 'package:hack_yeah_app_frontend/models/user.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:hack_yeah_app_frontend/api/debug_logs.dart';
@@ -44,7 +46,7 @@ class Authenticate {
         'Content-Type': 'application/json',
       },
       body: json.encode({
-        'full_name': firstName + lastName,
+        'full_name': '$firstName $lastName',
         'pesel': pesel,
         'district': gmina,
         'email': email,
@@ -86,6 +88,28 @@ class Authenticate {
       return true;
     } else {
       return false;
+    }
+  }
+
+  Future<User> getMe() async {
+    log('Getting user');
+    String? at = await jwt.getToken();
+
+    final response = await http.post(
+      Uri.parse('$baseUrl/get_me'),
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${await jwt.getToken()}',
+      },
+      body: jsonEncode({'access_token': at}),
+    );
+
+    if (response.statusCode == 200) {
+      final responseBody = json.decode(response.body);
+      log(responseBody.toString());
+      return User.fromJson(responseBody);
+    } else {
+      throw Exception('Failed to get user');
     }
   }
 }

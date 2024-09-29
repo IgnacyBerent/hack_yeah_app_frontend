@@ -29,7 +29,7 @@ class BalanceWidget extends StatelessWidget {
             Expanded(
               child: MyIconColumnButton(
                 onPressed: () {},
-                buttonText: 'Wypłać',
+                buttonText: 'Doładuj',
                 icon: const Icon(Icons.add),
               ),
             ),
@@ -37,7 +37,7 @@ class BalanceWidget extends StatelessWidget {
             Expanded(
               child: MyIconColumnButton(
                 onPressed: () {},
-                buttonText: 'Doładuj',
+                buttonText: 'Wypłać',
                 icon: const Icon(Icons.arrow_circle_down),
               ),
             ),

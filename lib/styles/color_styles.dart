@@ -19,8 +19,10 @@ const lightTheme = {
 };
 
 const contrastTheme = {
-  'mainColor': Color.fromARGB(255, 255, 193, 7),
-  'mainBackgroundColor': Color.fromARGB(255, 0, 0, 0),
-  'mainTextColor': Color.fromARGB(255, 255, 255, 255),
-  'secondaryTextColor': Color.fromARGB(255, 255, 87, 34),
+  'themeColor': Color.fromARGB(255, 0, 0, 0),
+  'mainColor': Colors.black,
+  'secondaryColor': Colors.yellow,
+  'mainTextColor': Colors.red,
+  'secondaryTextColor': Colors.red,
+  'thirdaryTextColor': Colors.black,
 };
