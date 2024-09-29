@@ -43,6 +43,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
 
+    if (user == null) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+
     return LayoutTemplate(
       screenName: '',
       child: SizedBox(
