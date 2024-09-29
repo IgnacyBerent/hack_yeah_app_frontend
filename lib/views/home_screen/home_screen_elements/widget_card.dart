@@ -11,7 +11,8 @@ class WidgetCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
 
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.only(bottom: 15),
       width: double.infinity,
       child: Card(
         color: themeNotifier.currentTheme['secondaryColor'],
