@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hack_yeah_app_frontend/models/project.dart';
+import 'package:hack_yeah_app_frontend/models/benefit.dart';
 import 'package:hack_yeah_app_frontend/styles/text_styles.dart';
-import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/project_element.dart';
+import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/benefit_element.dart';
 import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/widget_card.dart';
 
-class ProjectsWidget extends StatelessWidget {
-  const ProjectsWidget({required this.projects, super.key});
+class BenefitsWidget extends StatelessWidget {
+  const BenefitsWidget({required this.benefits, super.key});
 
-  final List<Project> projects;
+  final List<Benefit> benefits;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ProjectsWidget extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Projekty',
+              'Benefity',
               style: TextStyles.titleTextStyle(context),
             ),
           ),
@@ -25,12 +25,14 @@ class ProjectsWidget extends StatelessWidget {
             height: 500,
             child: PageView(
               children: [
-                for (final project in projects)
-                  ProjectElement(project: project),
+                for (final benefit in benefits)
+                  BenefitElement(benefit: benefit),
               ],
             ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(
+            height: 5,
+          ),
           Container(
             width: 200,
             height: 60,
