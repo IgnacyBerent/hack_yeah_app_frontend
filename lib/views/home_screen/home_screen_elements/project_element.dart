@@ -21,10 +21,9 @@ class ProjectElement extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(5),
         padding: const EdgeInsets.all(10),
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 255, 255, 255),
-          border: Border.fromBorderSide(
-              BorderSide(color: Color.fromARGB(255, 0, 0, 0))),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(160, 255, 255, 255),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
           children: [
@@ -37,18 +36,26 @@ class ProjectElement extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Text(
-              '${project.title} #${project.projectId}',
-              style: TextStyles.widgetTitleTextStyle(context),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
+            SizedBox(
+              height: TextStyles.widgetTitleTextStyle(context).fontSize! * 5.5,
+              child: Text(
+                '${project.title} #${project.projectId}',
+                style: TextStyles.widgetTitleTextStyle(context),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             const SizedBox(height: 5),
-            Text(
-              project.abstract,
-              style: TextStyles.secondaryDescriptionTextStyle(context),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
+            SizedBox(
+              height:
+                  TextStyles.secondaryDescriptionTextStyle(context).fontSize! *
+                      5.5,
+              child: Text(
+                project.abstract,
+                style: TextStyles.secondaryDescriptionTextStyle(context),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             const SizedBox(height: 15),
             Row(

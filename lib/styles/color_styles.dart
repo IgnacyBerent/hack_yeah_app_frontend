@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 const darkTheme = {
   'themeColor': Color.fromARGB(255, 0, 0, 0),
-  'mainColor': Color.fromARGB(255, 8, 8, 8),
+  'mainColor': Color.fromARGB(255, 34, 34, 34),
   'secondaryColor': Color.fromARGB(255, 230, 00, 126),
-  'mainTextColor': Color(0xFFF8F8F8),
+  'mainTextColor': Color(0xFFF0F0F0),
   'secondaryTextColor': Color.fromARGB(255, 117, 117, 117),
   'thirdaryTextColor': Color.fromARGB(255, 8, 8, 8),
 };

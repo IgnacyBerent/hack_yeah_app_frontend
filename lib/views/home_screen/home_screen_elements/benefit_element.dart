@@ -20,10 +20,9 @@ class BenefitElement extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(5),
         padding: const EdgeInsets.all(10),
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 255, 255, 255),
-          border: Border.fromBorderSide(
-              BorderSide(color: Color.fromARGB(255, 0, 0, 0))),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(160, 255, 255, 255),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
           children: [
@@ -36,16 +35,24 @@ class BenefitElement extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Text(
-              '${benefit.name} \$${benefit.price}',
-              style: TextStyles.widgetTitleTextStyle(context),
+            SizedBox(
+              height: TextStyles.widgetTitleTextStyle(context).fontSize! * 5.5,
+              child: Text(
+                '${benefit.name} \$${benefit.price}',
+                style: TextStyles.widgetTitleTextStyle(context),
+              ),
             ),
             const SizedBox(height: 5),
-            Text(
-              benefit.description,
-              style: TextStyles.secondaryDescriptionTextStyle(context),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
+            SizedBox(
+              height:
+                  TextStyles.secondaryDescriptionTextStyle(context).fontSize! *
+                      5.5,
+              child: Text(
+                benefit.description,
+                style: TextStyles.secondaryDescriptionTextStyle(context),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             const SizedBox(height: 10),
             CategoryWidget(

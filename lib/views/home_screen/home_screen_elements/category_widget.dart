@@ -15,9 +15,8 @@ class CategoryWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: Colors.grey[300],
+        color: Colors.grey[300]!.withOpacity(0.8),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.black),
       ),
       child: Text(
         text,
