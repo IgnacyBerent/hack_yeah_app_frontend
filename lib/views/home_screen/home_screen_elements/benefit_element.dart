@@ -47,7 +47,7 @@ class BenefitElement extends StatelessWidget {
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
             ),
-            const Spacer(),
+            const SizedBox(height: 10),
             CategoryWidget(
               text: benefit.category,
               textStyle: TextStyles.numberTextStyle(context),

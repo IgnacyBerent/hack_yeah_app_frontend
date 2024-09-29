@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:hack_yeah_app_frontend/api/database.dart';
 import 'package:hack_yeah_app_frontend/models/benefit.dart';
@@ -13,22 +15,30 @@ class BenefitsScreen extends StatefulWidget {
 
 class _ProjectsScreenState extends State<BenefitsScreen> {
   DatabaseApi db = DatabaseApi();
-  late List<Benefit> benefits = [];
+  List<Benefit> benefits = [];
 
-  Future<void> getProjects() async {
-    benefits = await db.getBenefits();
+  Future<void> getBenefits() async {
+    log('Getting benefits (home screen)');
+    try {
+      final value = await db.getBenefits();
+      setState(() {
+        benefits = value;
+      });
+    } catch (e) {
+      log('Error getting benefits: $e');
+    }
   }
 
   @override
   void initState() {
-    getProjects();
+    getBenefits();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return LayoutTemplate(
-      screenName: "Projekty",
+      screenName: "Benefity",
       child: ListView.builder(
         itemCount: benefits.length,
         itemBuilder: (context, index) {

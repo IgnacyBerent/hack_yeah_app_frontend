@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hack_yeah_app_frontend/models/benefit.dart';
 import 'package:hack_yeah_app_frontend/styles/text_styles.dart';
+import 'package:hack_yeah_app_frontend/views/benefits_screen/benefits_screen.dart';
 import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/benefit_element.dart';
 import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/widget_card.dart';
 
@@ -41,7 +42,11 @@ class BenefitsWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             ),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => BenefitsScreen(),
+                ));
+              },
               child: Text(
                 'Zobacz wszystkie',
                 style: TextStyles.descriptionTextStyle(context),

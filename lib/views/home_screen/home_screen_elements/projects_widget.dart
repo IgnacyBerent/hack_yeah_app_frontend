@@ -3,6 +3,7 @@ import 'package:hack_yeah_app_frontend/models/project.dart';
 import 'package:hack_yeah_app_frontend/styles/text_styles.dart';
 import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/project_element.dart';
 import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/widget_card.dart';
+import 'package:hack_yeah_app_frontend/views/projects_screen/projects_screen.dart';
 
 class ProjectsWidget extends StatelessWidget {
   const ProjectsWidget({required this.projects, super.key});
@@ -39,7 +40,11 @@ class ProjectsWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             ),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ProjectsScreen(projects: projects),
+                ));
+              },
               child: Text(
                 'Zobacz wszystkie',
                 style: TextStyles.descriptionTextStyle(context),

@@ -1,29 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hack_yeah_app_frontend/api/database.dart';
 import 'package:hack_yeah_app_frontend/models/project.dart';
 import 'package:hack_yeah_app_frontend/views/home_screen/home_screen_elements/project_element.dart';
 import 'package:hack_yeah_app_frontend/widgets/layout_template/layout_template.dart';
 
-class ProjectsScreen extends StatefulWidget {
-  const ProjectsScreen({super.key});
+class ProjectsScreen extends StatelessWidget {
+  const ProjectsScreen({required this.projects, super.key});
 
-  @override
-  State<ProjectsScreen> createState() => _ProjectsScreenState();
-}
-
-class _ProjectsScreenState extends State<ProjectsScreen> {
-  DatabaseApi db = DatabaseApi();
-  late List<Project> projects = [];
-
-  Future<void> getProjects() async {
-    projects = await db.getProjects();
-  }
-
-  @override
-  void initState() {
-    getProjects();
-    super.initState();
-  }
+  final List<Project> projects;
 
   @override
   Widget build(BuildContext context) {
